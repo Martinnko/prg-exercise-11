@@ -18,6 +18,18 @@ def selection_sort(values):
     return  values
 
 
+def bubble_sort(values):
+    for j in range(len(values)):
+        for val in range(len(values)-1):
+
+            if values[val] > values[val+1]:
+                values[val], values[val+1] = values[val+1], values[val]
+
+    print (values)
+    return values
+
+
+
 
 if __name__ == "__main__":
     values = random_numbers(10)  # 10 čísel v rozsahu 0–100
@@ -26,4 +38,4 @@ if __name__ == "__main__":
     small = random_numbers(5, low=0, high=20)  # 5 čísel v rozsahu 0–20
     print(small)
     min_index = selection_sort(values)
-
+    values_b = bubble_sort(values)
