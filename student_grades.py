@@ -1,6 +1,9 @@
+from sorting import random_numbers
 class StudentsGrades:
     def __init__(self, scores):
         self.scores = scores
+    def __iter__(self):
+        return iter(self.scores)
 
     def get_by_index(self, index):
         return self.scores[index]
@@ -39,7 +42,22 @@ class StudentsGrades:
                 if scores[val] > scores[val + 1]:
                     scores[val], scores[val + 1] = scores[val + 1], scores[val]
         return scores
+def main():
 
+    results = StudentsGrades([85, 42, 91, 67, 50, 73, 100, 38, 58])
+    mnozstvo = results.count()
+    print(mnozstvo)
+    for r in range(mnozstvo):
+        body = results.get_by_index(r)
+        znamka = results.get_grade(r)
+        print(f" Student {r}: {body} bodov - {znamka}")
+    print(f"{results.find(100)}")
+    print(f"{results.get_sorted()}")
+    from sorting import random_numbers
+
+    #random_results = StudentsGrades(random_numbers(30, 0, 100))
+    #print(random_results.count())
+    #print(random_results.get_sorted())
 
 if __name__ == "__main__":
     results = StudentsGrades([85, 42, 91, 67, 50, 73, 100, 38, 58])
@@ -55,14 +73,5 @@ if __name__ == "__main__":
     print(results.find(77))  # []
     print(results.get_sorted())  # [38, 42, 50, 58, 67, 73, 85, 91, 100]
     print(results.scores)  # [85, 42, 91, 67, 50, 73, 100, 38, 58]  ← beze změny
+    main()
 
-    def main():
-        results = StudentsGrades([85, 42, 91, 67, 50, 73, 100, 38, 58])
-        mnozstvo = results.count()
-        print(mnozstvo)
-        for r in range(mnozstvo):
-            body = results.get_by_index(r)
-            znamka = results.get_grade(r)
-            print(f" Student {r}: {body} bodov - {znamka}")
-        print(f"{results.find(100)}")
-        print(f"{results.get_sorted()}")
