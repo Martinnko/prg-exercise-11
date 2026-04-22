@@ -64,6 +64,5 @@ if __name__ == "__main__":
             body = results.get_by_index(r)
             znamka = results.get_grade(r)
             print(f" Student {r}: {body} bodov - {znamka}")
-            if body == 100:
-                print(f"{r}")
-        zoradeny = results.get_sorted()
+        print(f"{results.find(100)}")
+        print(f"{results.get_sorted()}")
