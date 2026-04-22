@@ -46,9 +46,9 @@ def bubble_sort(values):
 
 if __name__ == "__main__":
     values = random_numbers(10)  # 10 čísel v rozsahu 0–100
-    print(values)  # např. [42, 7, 91, 15, 63, 8, 57, 73, 2, 100]
+    #print(values)  # např. [42, 7, 91, 15, 63, 8, 57, 73, 2, 100]
 
     small = random_numbers(5, low=0, high=20)  # 5 čísel v rozsahu 0–20
-    print(small)
+    #print(small)
     #min_index = selection_sort(values)
     values_b = bubble_sort(values)
